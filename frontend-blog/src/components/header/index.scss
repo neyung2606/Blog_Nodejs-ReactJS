@@ -1,0 +1,47 @@
+.header-section {
+    display: flex;
+    height: 80px;
+    padding: 8px 20px 8px 0;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #818181;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    .account-user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5s;
+        user-select: none;
+
+        &:hover > div > p {
+            text-decoration: underline;
+        }
+    }
+}
+
+.menu-display {
+    position: absolute;
+    transition: 0.5s;
+    right: 20px;
+    width: 150px;
+    background-color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    transform: translateY(-3em);
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.openMenu {
+    visibility: visible;
+    z-index: 10;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s, 0s, 0.3s;
+}

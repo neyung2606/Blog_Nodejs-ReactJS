@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 const port = process.env.PORT || 3000;
 
@@ -8,6 +9,7 @@ module.exports = {
   devtool: "inline-source-map",
   entry: [
     require.resolve('../src/index.js'),
+    'react-hot-loader/patch', './src'
   ],
   output: {
     path: path.join(__dirname ,"../dist"),
@@ -63,6 +65,7 @@ module.exports = {
       template: "./public/index.html",
       favicon: "./public/favicon.ico",
     }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     host: "localhost",
@@ -70,9 +73,15 @@ module.exports = {
     historyApiFallback: true,
     open: true,
     stats: "errors-only",
+    hot: true,
+    watchOptions: {
+      poll: true,
+      ignored: "/node_modules/"
+    }
   },
   resolve: {
     alias: {
+      'react-dom': '@hot-loader/react-dom',
       "@components": path.resolve(__dirname, "..", "src/components/"),
       "@assets": path.resolve(__dirname, "..", "src/assets/"),
       "@pages": path.resolve(__dirname, "..", "src/pages/"),

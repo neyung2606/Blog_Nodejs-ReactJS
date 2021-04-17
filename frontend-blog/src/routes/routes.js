@@ -1,13 +1,13 @@
 export const routePath = {
-    home: '/',
+    user: '/admin/user',
     login: '/auth/login',
 }
 
 export const routes = [
     {
-        path: routePath.home,
+        path: routePath.user,
         exact: true,
-        component: 'home',
+        component: 'user',
         protected: true
     },
     {

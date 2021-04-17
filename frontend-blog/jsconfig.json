@@ -9,7 +9,9 @@
       "@pages/*": ["src/pages/*"],
       "@utils/*": ["src/utils/*"],
       "@stores": ["src/stores"],
-      "@routes": ["src/routes"]
+      "@routes": ["src/routes"],
+      "@apis/*": ["src/apis/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
   "exclude": ["node_modules"]

@@ -1,59 +1,67 @@
 .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    transition: 0.5s;
-    border-right: 1px solid #818181;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    background-color: #fff;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  border-right: 1px solid #818181;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #fff;
+  z-index: 999;
 
-    .logo-content {
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid #818181;
-        height: 80px;
+  .logo-content {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #818181;
+    height: 80px;
+  }
+
+  .sub-menu {
+    padding: 12px 8px 0 8px;
+  }
+
+  a {
+    padding: 8px 8px 8px 32px;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    text-decoration: none;
+    margin-bottom: 20px;
+
+    &:hover {
+      color: #fff;
+      background-color: #818181;
+      border-radius: 10px;
     }
-
-    .sub-menu {
-        padding: 12px 8px 0 8px;
-    }
-
-    a {
-        padding: 8px 8px 8px 32px;
-        font-size: 18px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-        text-decoration: none;
-        margin-bottom: 20px;
-
-        &:hover {
-            color: #fff;
-            background-color: #818181;
-            border-radius: 10px;
-        }
-    }
+  }
 }
 
 .btn-openSidebar {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 12px;
-    display: flex;
-    cursor: pointer;
-    transition: 0.5s;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 12px;
+  display: flex;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .openSidebar {
-    width: 250px;
+  width: 250px;
 }
 
 .openBtn {
-    left: 250px;
+  left: 250px;
+}
+
+.active {
+  color: #fff !important;
+  background-color: #818181;
+  border-radius: 10px;
 }

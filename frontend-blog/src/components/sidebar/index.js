@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import LogoBranch from "@assets/logo.png";
 import MenuIcon from "@assets/menu.png";
 import "./index.scss";
+import { routePath } from "@routes/routes";
 
 const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +14,10 @@ const SideBar = () => {
           <img src={LogoBranch} alt="logo-branch" width="70%" />
         </div>
         <div className="sub-menu">
-          <NavLink activeClassName="selected" exact to="">
+          <NavLink activeClassName="active" exact to={routePath.user}>
             User
           </NavLink>
-          <NavLink activeClassName="selected" exact to="">
+          <NavLink activeClassName="active" exact to="">
             Post
           </NavLink>
         </div>
@@ -32,4 +33,4 @@ const SideBar = () => {
   );
 };
 
-export { SideBar }
+export { SideBar };

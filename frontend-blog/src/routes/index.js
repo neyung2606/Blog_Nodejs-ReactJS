@@ -29,6 +29,15 @@ const RouterComponent = () => {
     <Router>
       <Suspense fallback={"Loading."}>
         <Switch>
+          <Redirect
+            exact
+            from="/"
+            to={
+              localStorage.getItem("access-token")
+                ? routePath.user
+                : routePath.login
+            }
+          />
           {routes.map((route, index) => {
             return route.protected ? (
               <PrivateRoute

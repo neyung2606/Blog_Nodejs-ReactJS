@@ -10,6 +10,7 @@ exports.signup = async (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password),
+    createdAt: moment().valueOf()
   });
 
   if (req.body.roles) {
@@ -41,7 +42,7 @@ exports.signin = async (req, res) => {
       .status(401)
       .send({ accessToken: null, message: "Invalid password" });
 
-  const token = await jwt.sign({ id: user._id }, config.secret);
+  const token = await jwt.sign({ currentUser: user }, config.secret);
 
   const authorities = [];
 

@@ -7,12 +7,15 @@ const User = mongoose.model(
     email: String,
     password: String,
     phoneNumber: String,
+    isActive: Boolean,
     roles: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Role",
       },
     ],
+    createdAt: Number,
+    updatedAt: Number
   })
 );
 

@@ -4,7 +4,7 @@ const db = require("../models");
 const User = db.user;
 const Role = db.role;
 
-const verifyToken = async (req, res) => {
+const verifyToken = async (req, res, next) => {
   const token = req.headers["authorization"];
 
   if (!token) {
@@ -17,7 +17,8 @@ const verifyToken = async (req, res) => {
     return res.status(401).send({ message: "Unauthorized" });
   }
 
-  req.userId = decoded.userId;
+  req.currentUser = decoded.currentUser;
+  next()
 };
 
 const notUser = async (req, res) => {

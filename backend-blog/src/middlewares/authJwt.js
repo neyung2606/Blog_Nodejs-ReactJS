@@ -11,7 +11,9 @@ const verifyToken = async (req, res, next) => {
     return res.status(403).send({ message: "No token provided" });
   }
 
-  const decoded = await jwt.verify(token, config.secret);
+  const cutBearer = await token.split(" ")[1]
+
+  const decoded = await jwt.verify(cutBearer, config.secret);
 
   if (!decoded) {
     return res.status(401).send({ message: "Unauthorized" });
